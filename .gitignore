@@ -1,7 +1,4 @@
-.DS_Store
-Thumbs.db
-db.json
+.idea/
 *.log
-node_modules/
-public/
-.deploy*/
+
+
