@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-*.log
 /.git
-=======
 .idea/
 *.log
+dea/
 
-
->>>>>>> 8e3a3609e9a4e9bb28742db9f670e3989e84eb8f
