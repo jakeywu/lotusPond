@@ -78,7 +78,7 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-# scheme: Muse
+#scheme: Muse
 #scheme: Mist
 scheme: Pisces
 
@@ -310,7 +310,7 @@ baidu_analytics: 2a9b583ea39d19c0385df794082f3615
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: http-115-28-109-99-4000
   count: true
 
@@ -318,7 +318,7 @@ disqus:
 #hypercomments_id:
 
 # Gentie productKey
-#gentie_productKey:
+# gentie_productKey: 26df238d31c04412af918cdb6bb30897
 
 # changyan
 changyan:
@@ -328,21 +328,21 @@ changyan:
 
 # Support for youyan comments system.
 # You can get your uid from http://www.uyan.cc
-#youyan_uid: your uid
+# youyan_uid: 2126029
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-#livere_uid: your uid
+livere_uid: MTAyMC8yODk3MS81NTQw
 
 # Baidu Share
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-baidushare: true
+# baidushare: true
 ##  type: button
 
 # Share
-jiathis: true
+# jiathis: true
 # Warning: JiaThis does not support https.
 #add_this_id:
 
