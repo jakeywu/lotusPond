@@ -11,16 +11,16 @@ keywords: "Hexo, NexT"
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
 # Set rss to specific value if you have burned your feed already.
-rss:
+rss:  
 
 # Specify the date when the site was setup
-#since: 2015
+since: 
 
 # icon between year and author @Footer
 authoricon: heart
 
 # Footer `powered-by` and `theme-info` copyright
-copyright: true
+copyright: false
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -41,7 +41,6 @@ index_with_subtitle: false
 # ---------------------------------------------------------------
 # Menu Settings
 # ---------------------------------------------------------------
-
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
@@ -140,8 +139,8 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
-  #LinkLabel: Link
+social:
+    Github: https://github.com/jakeywu
 
 
 # Social Links Icons
@@ -156,6 +155,10 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
+
+reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作
+wechatpay: /uploads/wechat.png
+alipay: /uploads/alipay.png
 
 
 # Sidebar Avatar
@@ -251,10 +254,10 @@ post_wordcount:
   separated_meta: true
 
 # Wechat Subscriber
-#wechat_subscriber:
-  #enabled: true
-  #qcode: /path/to/your/wechatqcode ex. /uploads/wechat-qcode.jpg
-  #description: ex. subscribe to my blog by scanning my public wechat account
+wechat_subscriber:
+  enabled: true
+  qcode: /uploads/wechat-public.jpg
+  description: 欢迎订阅我的公众号
 
 # Declare license on posts
 post_copyright:
@@ -282,7 +285,7 @@ custom_logo:
 # Available value:
 #    normal | night | night eighties | night blue | night bright
 # https://github.com/chriskempson/tomorrow-theme
-highlight_theme: normal
+highlight_theme: night
 
 
 # ---------------------------------------------------------------
@@ -478,7 +481,7 @@ algolia_search:
 
 # Local search
 local_search:
-  enable: false
+  enable: true
   # if auto, trigger search by changing input
   # if manual, trigger search by pressing enter key or search button
   trigger: auto
