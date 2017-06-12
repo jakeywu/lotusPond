@@ -3,8 +3,9 @@ title: elasticSearch
 date: 2017-06-08 19:53:01
 tags:
 ---
-[ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html)是一个ElasticSearch是一个基于[Lucene](http://baike.baidu.com/item/Lucene)的搜索服务器, 
-高度可扩展的开源全文搜索和分析引擎, 快速、近实时地存储、搜索和分析大量数据. Elasticsearch是用Java开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎。设计用于云计算中，能够达到实时搜索，稳定，可靠，快速，安装使用方便
+[ElasticSearch](https://www.elastic.co/guide/en/elasticsearch/reference/current/getting-started.html)ElasticSearch是
+一个基于[全文检索引擎工具包 Lucene](http://baike.baidu.com/item/Lucene)的可扩展, 分布式, 实时的搜索与数据分析引擎. Elasticsearch
+是用Java开发的，并作为Apache许可条款下的开放源码发布，是当前流行的企业级搜索引擎. 设计用于云计算，能够达到实时搜索，稳定，可靠，快速，安装使用方便
 
 具体的使用场景为:
 - 比如在线产品商店, 用于存储产品名录, 可以根据用户搜索结果推荐产品名录
@@ -23,11 +24,34 @@ tags:
 - Shards & Replicas   碎片和副本
 - 碎片的优势: 水平扩展, 分发和并行化操作     副本的优势: 提高可用性, 可以应对shard/node失效. 分片和副本不应该和主分片在同一个节点上, 提上搜索能力(主分片和分片副本不应在同一个node上)
     
-
-ES提供了丰富的REST API和Cluster交互, 例如:
+1. 集群的总体了解  ES提供了丰富的REST API和Cluster交互, 例如:
       
-- 检查集群, 节点, 索引的健康状态和基本信息
-- 管理集群, 节点, 索引数据和基本元数据
+- 检查集群健康状态
+``` curl -XGET 'localhost:9200/_cat/health?v&pretty'
+    epoch      timestamp cluster       status node.total node.data shards pri relo init unassign pending_tasks max_task_wait_time active_shards_percent
+    1497257485 16:51:25  elasticsearch yellow          1         1      5   5    0    0        5             0                  -                 50.0%
+```
+
+- 集群的所有节点
+```curl -XGET 'localhost:9200/_cat/nodes?v&pretty'
+   ip        heap.percent ram.percent cpu load_1m load_5m load_15m node.role master name
+   127.0.0.1           17          94   9    0.83    0.67     0.60 mdi       *      t--l8qc
+```
+
+- 罗列集群的所有指标
+```curl -XGET 'localhost:9200/_cat/indices?v&pretty'
+   health status index   uuid                   pri rep docs.count docs.deleted store.size pri.store.size
+   yellow open   twitter 7I9lWp72RXmTPNcczV6UIg   5   1          1            0      5.3kb          5.3kb
+```
+
+- 创建索引
+```curl -XPUT 'localhost:9200/customer?pretty&pretty'
+   {
+     "acknowledged" : true,
+     "shards_acknowledged" : true
+   }
+```
+
 - 根据索引执行CRUD操作
 - 执行高级查询操作(分页, 排序, 过滤, Scripting 聚合==)
 
@@ -108,3 +132,135 @@ ES提供了丰富的REST API和Cluster交互, 例如:
     }
     ➜  ~ curl -XGET 'localhost:9200/_cat/indices?v&pretty'
     health status index uuid pri rep docs.count docs.deleted store.size pri.store.size
+
+***
+
+搜索服务:(搜索API的范围很广: )
+
+1. 在一个索引内, 所有类型
+
+```
+    curl -XGET 'localhost:9200/twitter/_search?q=user:kimchy&pretty'
+```
+
+2. 一个索引内, N个特定类型中查询
+
+```
+    curl -XGET 'localhost:9200/twitter/tweet,user/_search?q=user:kimchy&pretty'
+```
+
+3. 多个指标内, 某个类型中查询
+
+```
+    curl -XGET 'localhost:9200/kimchy,elasticsearch/tweet/_search?q=tag:wow&pretty'
+```
+
+4. 所有指标内, 特定类型中
+
+```
+    curl -XGET 'localhost:9200/_all/tweet/_search?q=tag:wow&pretty'
+```
+5. 所有指标内, 所有类型中
+```
+    curl -XGET 'localhost:9200/_search?q=tag:wow&pretty'
+```
+
+```
+    e = {
+        "ＢaseException": {
+            "Exception": {
+                "StandardError": {
+                    "ArithmeticError": {
+                        "FloatingPointError": None,
+                        "OverflowError": None,
+                        "ZeroDivisionError": None
+                    },
+                    "AssertionError": None, 
+                    "AttributeError": None,
+                    "BufferError": None,
+                    "MemoryError": None,
+                    "ValueError": {
+                        "UnicodeError": {
+                            "UnicodeDecodeError": None,
+                            "UnicodeEncodeError": None,
+                            "UnicodeTranslateError": None
+                        },
+                    },
+                    "NameError": {
+                        "UnboundLocalError": None
+                    },
+                    "ReferenceError": None,
+                    "SystemError": None,
+                    "TypeError": None,
+                    "RuntimeError": {
+                        "NotImplementedError": None,
+                    },
+                    "EnvironmentError": {
+                        "IOError": None,
+                        "OSError": None
+                    },
+                    "EOFError": None,
+                    "ImportError": None,
+                    "LookupError": {
+                        "IndexError": None,
+                        "KeyError": None
+                    },
+                    "SyntaxError": {
+                        "IndentationError": None,
+                        "TabError": None
+                    },
+                },
+                "Warning": {
+                    "BytesWarning": None,
+                    "DeprecationWarning": None, 
+                    "FutureWarning": None, 
+                    "ImportWarning": None,
+                    "PendingDeprecationWarning": None,
+                    "RuntimeWarning": None,
+                    "SyntaxWarning": None,
+                    "UnicodeWarning": None,
+                    "UserWarning": None
+                },
+                "StopIteration": None,
+            },
+            "GeneratorExit": None,
+            "KeyboardInterrupt": None,
+            "SystemExit": None
+        }
+    }
+
+```
+
+查询句子 Query DSL
+1. 单查询  Leaf query clauses   比如在特定字段查询特定值 match, term, range
+2. 复合查询  Compound query clauses  多个单查询或者复合查询组合
+
+查询包含Query和Filter
+Query  如何查询, 会影响_score值  Filter查询结果是否匹配, 不会影响_score值
+
+1. Match All Query
+所有_score值都是1.0   可以根据boost设置_score分值
+``` 
+    curl -XGET 'localhost:9200/_search?pretty' -H 'Content-Type: application/json' -d'
+    {
+        "query": {
+            "match_all": {}
+        }
+    }
+    '
+    
+    curl -XGET 'localhost:9200/_search?pretty' -H 'Content-Type: application/json' -d'
+    {
+        "query": {
+            "match_all": { "boost" : 100 }
+        }
+    }
+    '
+```
+
+Full text queries== running full text queries on full text fields 
+match   标准全文查询, 包括模糊匹配, 短语, 邻近查询
+match_phrase  精确查询或短语匹配
+match_phrase_prefix
+multi_match   
+query_string   可以用AND|OR|NOT条件组合
