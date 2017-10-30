@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 荷花池
-subtitle: 小鱼儿的荷花池
-description: python golang react postgres
-author: 小鱼儿
+title: 小鱼儿博客
+subtitle: 
+description: 你说你有点难追 我就打断你大腿
+author: littleFish
 language: zh-Hans
 timezone:
 
@@ -17,7 +17,7 @@ root: /
 #permalink: :year/:month/:day/:title/
 permalink: :category/:title.html
 permalink_defaults:
-avatar: /uploads/avatar.png
+#avatar: /uploads/avatar.png
 
 # Directory
 
@@ -37,7 +37,7 @@ skip_render:
 
 # Writing
 # 新文章的文件名称
-new_post_name: :title.md
+new_post_name: :year-:month-:day-:title.md
 # 预设布局
 default_layout: post
 titlecase: false # Transform title into titlecase
@@ -46,7 +46,7 @@ external_link: true
 filename_case: 0
 render_drafts: false
 # 启动 Asset 文件夹
-post_asset_folder: true
+post_asset_folder: false
 # 把链接改为与根目录的相对位址
 relative_link: false
 future: true
@@ -57,7 +57,7 @@ highlight:
   tab_replace:
 
 # Category & Tag
-default_category: 杂文
+default_category: essay
 category_map:
 tag_map:
 
