@@ -7,6 +7,11 @@ categories: 预发布
 date: 2017-10-30 13:03:49
 ---
 
+在信息通信领域,有一个叫做中新企业大数据服务平台的项目,
+由重庆誉存大数据科技有限公司与新加坡Intel Wise签署战略合作
+
+
+
 ```
 # !/usr/bin/env python
 # -*- coding:utf-8 -*-
@@ -19,7 +24,10 @@ import sys
 import tornado.web
 from scpy.logger import get_logger
 from tornado.ioloop import IOLoop
+```
 
+<!-- more -->
+```
 from handler.controllers.crawler_service.emotion import ContentEmotion
 from handler.controllers.crawler_service.repeation import CrawlerDescHandler, CrawlerReleaseHandler, \
     CrawlerRepeatHandler

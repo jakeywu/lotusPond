@@ -42,16 +42,16 @@ footer:
   copyright:
   # -------------------------------------------------------------
   # Hexo link (Powered by Hexo).
-  powered: true
+  powered: false
 
   theme:
     # Theme & scheme info link (Theme - NexT.scheme).
-    enable: true
+    enable: false
     # Version info of NexT after scheme info (vX.X.X).
-    version: true
+    version: false
   # -------------------------------------------------------------
   # Any custom text can be defined here.
-  #custom_text: Hosted by <a target="_blank" href="https://pages.github.com">GitHub Pages</a>
+  custom_text: 服务器采用 <a target="_blank" href="https://www.aliyun.com/">阿里云</a>
 
 # ---------------------------------------------------------------
 # SEO Settings
@@ -85,8 +85,8 @@ menu:
   tags: /tags/ || tags
   categories: /categories/ || th
   archives: /archives/ || archive
-  schedule: /schedule/ || calendar
-  sitemap: /sitemap.xml || sitemap
+#  schedule: /schedule/ || calendar
+#  sitemap: /sitemap.xml || sitemap
   commonweal: /404/ || heartbeat
 
 # Enable/Disable menu icons.
@@ -469,9 +469,9 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: false
-  app_id: #<app_id>
-  app_key: #<app_key>
+  enable: true
+  app_id: NX3wNoIembEoAmC9Luk5QqVu-gzGzoHsz
+  app_key: eXQQQT5C2eyjP4xlPaUGkWLJ
 
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
