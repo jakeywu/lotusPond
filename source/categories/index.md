@@ -8,6 +8,7 @@ category:
     - python
     - golang
     - linux
+    - database
     - 服务器
     - 微服务
 ---
