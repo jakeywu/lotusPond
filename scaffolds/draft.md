@@ -2,8 +2,8 @@
 title: {{ title }}
 date: {{date}}
 tags:
-    草稿
+    undefined
 categories:
-    预发布
+    preview
 
 ---
