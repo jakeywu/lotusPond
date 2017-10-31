@@ -4,8 +4,10 @@ type: "categories"
 comments: false
 category: 
     - essay
+    - myWorld
     - python
     - golang
+    - linux
     - 服务器
     - 微服务
 ---
