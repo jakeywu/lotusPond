@@ -1,5 +1,5 @@
 ---
-title: linuxCommand
+title: linux常用命令
 comments: true
 tags: linux常用命令
 categories: linux
