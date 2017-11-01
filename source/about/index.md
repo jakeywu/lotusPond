@@ -7,4 +7,5 @@ date: 2017-10-31 12:05:06
 updated: 2017-10-31 12:05:06
 ---
 
-#### 桃李不言 下自成蹊
+#### Nothing is given. Everything is earned
+
