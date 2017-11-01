@@ -37,3 +37,4 @@ Git是一个开源的分布式版本控制系统,可以有效, 高速的处理�
     git push origin master  # 推送到远程分支
     
 ``` 
+1. `git status`命令, 产看仓库当前的状态
