@@ -120,3 +120,29 @@ Git是一个开源的分布式版本控制系统,可以有效, 高速的处理�
 ```
     git clone  git@github.com:jakeywu/ceshi.git
 ```
+
+### 创建与合并分支
+在GIT里, 分支路线为`HEAD--\>branch--\>提交`, 每个分支为一个指针, HEAD指向不同指针, 指针指向提交节点. 每次切换分支只需要更改指针指向
+1. 创建并切换分支, `-b`参数表示创建并切换
+```
+     git checkout -b dev
+     # 等价于以下两条命令
+     git branch dev
+     git checkout dev
+```
+
+2. 查看当前分支
+```
+    git branch
+```
+
+3. 合并分支, `git merge`用于合并指定分支到当前分支
+```
+    git merge dev
+    # 查看分支合并图
+    git log --graph --pretty=oneline --abbrev-commit
+```
+4. 删除分支
+```
+    git branch -d dev
+```
