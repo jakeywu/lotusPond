@@ -44,14 +44,14 @@ updated: 2017-11-01 19:42:24
 * 解压压缩包.  tar高效率,linux应用广泛; zip跨平台
 ```
     压缩doc目录为doc.zip
-    zip  -r doc.tar.gz doc
     zip  -r doc.tar doc
-    tar -cvf doc.zip doc
+    tar -cvf doc.tar doc
+    tar  -zcvf doc.tar.gz doc
     
     解压doc.zip到当前目录
     unzip doc.zip 
     tar -xvf doc.tar
-    tar -xvf doc.tar.gz
+    tar -zxvf doc.tar.gz
 ```
 * 卸载软件(卸载某个指定软件和自动卸载多余的软件)
 ```
