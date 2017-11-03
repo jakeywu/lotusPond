@@ -230,8 +230,8 @@ wechat_subscriber:
 
 # Reward
 reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作
-wechatpay: /images/wechat.png
-alipay: /images/alipay.png
+wechatpay: /images/wechat.jpg
+alipay: /images/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
