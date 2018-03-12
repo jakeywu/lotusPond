@@ -15,12 +15,12 @@ SimRank 是一种基于图的拓扑结构信息来衡量任意两个对象间相
 GloVe performs a bilinear approximation of the word co-occurrence matrix computed over training data
                 双线性         相似                     共现         矩阵
 The V x V dimensional word co-occurrence matrix C is obtained by traversing training text and counting co-occurrences
-            维度                                         获得        遍历             
+            维度                                         获得        遍历
 LM(language model) training 语言模型训练
 
 word2vec  一款将词表征为实数值向量的高效工具. 一种典型的神经网络语言模型. 预测word o 出现在word c的上下文语境里的条件概率. 模型的损失函数是一个对数似然函数.              
 
-MLE  极大似然估计法  
+MLE  极大似然估计法
 概率: 已知参数, 求各种情况的可能性
 似然: 已知结果, 推测参数
 
@@ -92,3 +92,4 @@ GloVe  将全局词-词共现矩阵进行分些, 比词-文档矩阵更加稠密
 global log-bilinear regression model == global matrix factorization + local context window methods
 glove通过训练词-词共现矩阵的非零协作元素, 有效利用了统计信息  而非简单地稀疏矩阵或者大语料库中的单个上下文
 
+CNN(卷积神经网络)、RNN(循环神经网络)、DNN(深度神经网络)的内部网络结构有什么区别
